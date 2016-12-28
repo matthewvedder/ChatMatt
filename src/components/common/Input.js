@@ -4,7 +4,8 @@ const styles = {
   inputStyle: {
     color: '#000',
     fontSize: 18,
-    alignSelf: 'flexEnd'
+    alignSelf: 'flexEnd',
+    outline: 'none'
   },
   labelStyle: {
     fontSize: 18,

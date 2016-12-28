@@ -60,18 +60,14 @@ class MessageForm extends Component {
 
   render () {
     const { value, messages, notifications } = this.state
-    const { notificationsStyle, typingStyle, inputContainerStyle } = styles
+    const { notificationsStyle, typingStyle, inputContainerStyle, buttonStyle } = styles
     return (
       <div>
-        <ul id="notifications" style={ notificationsStyle }>
+        <ul style={ notificationsStyle }>
           { this.mapList(notifications) }
         </ul>
 
         <ul id="messages">{ this.mapList(messages) }</ul>
-
-        <p style={ typingStyle }>
-          { this.isTypingMessage() }
-        </p>
 
         <form style={inputContainerStyle} onSubmit={ this.handleSubmit }>
           <Input
@@ -79,8 +75,12 @@ class MessageForm extends Component {
             id="message"
             onChange={ this.handleChange }
           />
-          <button>Send</button>
+          <button style={ buttonStyle }>Send</button>
         </form>
+
+        <p style={ typingStyle }>
+          { this.isTypingMessage() }
+        </p>
       </div>
     )
   }
@@ -97,6 +97,11 @@ const styles = {
   },
   typingStyle: {
     color: 'green'
+  },
+  buttonStyle: {
+    color: 'white',
+    backgroundColor: '#222',
+    border: 0
   }
 }
 
