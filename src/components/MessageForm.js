@@ -67,11 +67,11 @@ class MessageForm extends Component {
           { this.mapList(notifications) }
         </ul>
 
+        <ul id="messages">{ this.mapList(messages) }</ul>
+
         <p style={ typingStyle }>
           { this.isTypingMessage() }
         </p>
-
-        <ul id="messages">{ this.mapList(messages) }</ul>
 
         <form style={inputContainerStyle} onSubmit={ this.handleSubmit }>
           <Input
@@ -89,7 +89,8 @@ class MessageForm extends Component {
 const styles = {
   inputContainerStyle: {
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingBottom: '10'
   },
   notificationsStyle: {
     color: 'orange'
